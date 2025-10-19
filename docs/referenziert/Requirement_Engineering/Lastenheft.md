@@ -1,24 +1,24 @@
 # Lastenheft: Bräunungsgradsteuerung für Waffeleisen
-Der Bräunungsgrad der Waffeln soll klar, eindeutig und in intuitiv verständlicher Form angezeigt werden.
 
-Die Bedienung des Waffeleisens darf durch die Bräunungsgradkontrolle nicht komplizierter werden.
+Der gewünschte Bräunungsgrad der Waffel kann einfach ausgewählt werden.  
+Die Auswahl erfolgt klar, eindeutig und intuitiv verständlich.  
+Der eingestellte Bräunungsgrad wird deutlich angezeigt.
 
-Die Anzeige des aktuellen Status (z.B. "Aufheizen") soll ohne spürbare Verzögerungen erfolgen.
+Die aktuelle Temperatur der Heizplatte wird gemessen und überwacht.  
+Die Temperaturmessung erfolgt zuverlässig und ohne spürbare Verzögerung.  
+Bei Überhitzung wird der Benutzer rechtzeitig informiert.
 
-Der Backvorgang und seine verschiedenen Zustände (wie Aufheizen, Bereit, Backen) müssen für mich eindeutig und klar erkennbar sein.
+Die Heizleistung wird automatisch an den gewählten Bräunungsgrad angepasst.  
+Das System sorgt dafür, dass die gewünschte Bräunung erreicht wird, ohne dass die Waffel verbrennt.  
+Ich kann den Backvorgang jederzeit abbrechen.
 
-Es soll klar erkennbar sein, wenn das Gerät aktiv im Aufheizprozess ist.
+Der aktuelle Zustand des Waffeleisens (z. B. Aufheizen, Backen, Fertig) ist jederzeit erkennbar.  
+Die Anzeige ist klar, verständlich und funktioniert zuverlässig auch nach längerem Nichtgebrauch.  
+Die Anzeige ist auch für ältere oder farbenblinde Benutzer gut erkennbar.
 
-Es soll klar erkennbar sein, wenn der gewählte Bräunungsgrad erreicht und der Backvorgang abgeschlossen ist.
+Ich werde akustisch benachrichtigt, wenn das Waffeleisen aufgeheizt ist.  
+Ich werde ebenfalls akustisch informiert, wenn die Waffel fertig gebacken ist.  
+Der Signalton ist gut hörbar, aber nicht störend.
 
-Ich werde akustisch darauf hingewiesen, dass der Backvorgang abgeschlossen ist, damit ich die Waffel entnehmen kann.
-
-Ich muss die gewünschte Bräunungsstufe (z.B. in 5 Stufen) frei einstellen können.
-Ich kann mir den zuletzt eingestellten Bräunungsgrad anzeigen lassen, auch wenn das Waffeleisen gerade nicht verwendet wird.
-
-Die Anzeige muss für farbenblinde oder ältere Nutzer erkennbar sein.
-Ich werde darüber informiert, wenn ein technischer Defekt (z.B. eine Überhitzung oder ein Heizfehler) vorliegt.
-
-Die Bräunungsgradkontrolle funktioniert zuverlässig unter Alltagsbedingungen und gewährleistet eine konsistente Backqualität.
-
-Die Anzeige darf nicht zu hell oder störend sein, wenn ich das Waffeleisen z.B. frühmorgens oder nachts benutze.
+Das System reagiert schnell auf meine Eingaben und funktioniert unter normalen Haushaltsbedingungen zuverlässig.  
+Die Anzeige ist nicht zu hell oder störend, wenn das Gerät frühmorgens oder abends benutzt wird.
