@@ -6,6 +6,8 @@
 
 [Pflichtenheft: Batteriestandskontrolle für Rasierapparat](./referenziert/Requirement_Engineering/Pflichtenheft.md)
 
+
+
 ## Teilfunktionalitäten
 1. **Auswahl des Bräunungsgrads**
 2. **Temperaturmessung und -überwachung**
