@@ -6,9 +6,6 @@
 
 [Pflichtenheft: Batteriestandskontrolle für Rasierapparat](./referenziert/Requirement_Engineering/Pflichtenheft.md)
 
-## Architektur
-
-[Architektur - Komponentendiagramm](./Sprint/Architektur.md)
 
 ## Teilfunktionalitäten
 1. **Auswahl des Bräunungsgrads**
