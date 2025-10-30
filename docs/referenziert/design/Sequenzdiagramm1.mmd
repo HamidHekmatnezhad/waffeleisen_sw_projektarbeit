@@ -1,0 +1,23 @@
+ sequenceDiagram
+    actor Benutzer
+    participant UI as ButtonInput
+    participant Controller as WaffelController
+    participant Regler as PIDRegler
+    participant Aktuator as HeaterActuator
+    
+    title Einfache Sequenz: Aufheizstart
+
+    %% 1. Eingabe
+    Benutzer->>UI: 1. Taste '+' drücken
+    UI->>Controller: 2. verarbeiteEingabe(grad)
+    
+    %% 2. Berechnung des Sollwerts 
+    Controller->>Controller: 3. ermittleSollwert()
+    
+    %% 3. Regelung und Ansteuerung
+    loop Ständige Regelung (z.B. alle 100ms)
+        Controller->>Regler: 4. setzeSolltemperatur()
+        Controller->>Regler: 5. berechneStellgroesse(aktuelle Temp)
+        
+        Regler->>Aktuator: 6. setzeLeistung(Stellgröße)
+    end

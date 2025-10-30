@@ -53,3 +53,14 @@
 |**Anwendungsschicht**|Steuerungs- und Logikschicht|Verwaltung des Bräunungsgrads, Steuerung der Temperaturziele, Ablaufkontrolle des Backvorgangs|
 |**Regelungsschicht**|Regelungslogik| Umsetzung der Temperaturregelung (PID-Regler), Ansteuerung der Heizelemente|
 |**Hardware-Abstraktion**|Hardware-Interface|Verbindung zwischen Software und Sensorik/Aktorik (Temperaturfühler, Heizspirale, Display, LEDs, Tasten, Buzzer)|
+
+
+## Schnittstellen 
+
+| Interface (Methode) | Sender (Absender) | Empfänger (Empfänger) | **Syntax (Kommunikationsart)** | **Semantik (Werte, Einheiten & Bereiche)** |
+| :--- | :--- | :--- | :--- | :--- |
+| **`leseTemperatur()`** | `PIDRegler` | `TemperatureSensor` | **Synchroner Funktionsaufruf** (In-Process) | **Output:** `float` (Aktuelle Temperatur in **°C**). |
+| **`calculateHeatingPower()`** | `WaffelController` | `PIDRegler` | **Synchroner Funktionsaufruf** (Regelberechnung) | **Input:** `istTemp: float` (Aktuelle Temperatur in **°C**). **Output:** `float` (Stellgröße, Bereich **0.0 - 1.0**). |
+| **`setzeSolltemperatur()`** | `WaffelController` | `PIDRegler` | Synchroner Funktionsaufruf | **Input:** `temp: int` (Zieltemperatur in **°C**). |
+| **`setzeLeistung()`** | `PIDRegler` | `HeaterActuator` | Synchroner Funktionsaufruf (Hardware-Ansteuerung) | **Input:** `leistung: float` (Leistungsvorgabe im Bereich **$0.0$ bis $1.0$**). |
+| **`verarbeiteEingabe()`** | `ButtonInput` | `WaffelController` | **Asynchroner Event** (Callback/Interrupt) | **Input:** `grad: int` (Der vom Benutzer gewählte Bräunungsgrad, Bereich **$1$ bis $5$**). |

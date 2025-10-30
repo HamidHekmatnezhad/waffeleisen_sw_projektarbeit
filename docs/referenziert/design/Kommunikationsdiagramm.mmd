@@ -1,0 +1,26 @@
+graph TD
+    A[Benutzer]
+    B(ButtonInput)
+    C[WaffelController]
+    D[Solltabelle]
+    E[PIDRegler]
+    F[HeaterActuator]
+    G[SimpleGUI]
+
+
+    A -- "1.0: Taste '+' drücken" --> B
+    B -- "1.1: verarbeiteEingabe(grad: 3)" --> C
+
+    C -- "2.0: holeSolltemperatur()" --> D
+    D -- "2.1: Return: Sollwert" --> C
+
+    C -- "3.0: setzeSolltemperatur()" --> E
+    C -- "4.0: setzeZustand(AUFHEIZEN)" --> G
+
+    C -- "5.0: runRegelungszyklus()" --> E
+    E -- "5.1: setzeLeistung(1.0)" --> F
+    F -- "5.2: Return" --> E
+    E -- "5.3: Return" --> C
+    
+    G -- "7.0: zeigeZustand(AUFHEIZEN)" --> A
+    

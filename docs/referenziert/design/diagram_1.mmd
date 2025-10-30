@@ -1,0 +1,57 @@
+classDiagram
+
+    class WaffelController {
+        - aktuellerZustand: Zustand
+        - sollTemp: int
+        - isHeizungAktiv: boolean
+        + starteBackvorgang(): void
+        + verarbeiteEingabe(grad: int): void
+        + runRegelkreisIteration(): void
+    }
+
+    class PIDRegler {
+        - sollTemperatur: float
+        - kp, ki, kd: float
+        - integralerFehler: float
+        - letzterFehler: float
+        + setzeSolltemperatur(temp: int): void
+        + calculateHeatingPower(istTemp: float): float
+    }
+    
+    class Solltabelle {
+        - gradZuTemp: Map~int, int~
+        + holeSolltemperatur(grad: int): int
+    }
+    
+    class TemperatureSensor {
+        - messIntervall: int
+        + leseTemperatur(): float
+    }
+    
+    class HeaterActuator {
+        - maxLeistung: int
+        + setzeLeistung(leistung: float): void
+    }
+    
+    class ButtonInput {
+        - plusTasteGedrückt: boolean
+        - minusTasteGedrückt: boolean
+        + leseTastePlusMinus(): char
+    }
+    
+    class SimpleGUI {
+        + zeigeZustand(text: String): void
+        + getDisplayState(): String
+    }
+
+    
+    %% Beziehungen (Associations)
+    
+    WaffelController "1" -- "1" PIDRegler : steuertRegler
+    WaffelController "1" -- "1" Solltabelle : liestSollwert
+    WaffelController "1" -- "1" SimpleGUI : zeigtStatus
+    
+    ButtonInput --> WaffelController : liefertEingabe
+
+    PIDRegler "1" -- "1" TemperatureSensor : holtIstTemperatur
+    PIDRegler "1" -- "1" HeaterActuator : setztLeistung
