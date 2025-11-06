@@ -14,3 +14,34 @@ von Hamid Hekmatnezhad
 4. Zustandsanzeige
 5. Akustische Rückmeldung
 
+
+
+```txt
+waffeleisen_sw_projektarbeit/
+├── Bräunungsgradsteuerung_Waffeleisen.iml
+├── docs
+│   ├── referenziert
+│   │   ├── design
+│   │   │   ├── diagram_1.mmd
+│   │   │   ├── diagram_1.png
+│   │   │   ├── Kommunikationsdiagramm.1.png
+│   │   │   ├── Kommunikationsdiagramm.mmd
+│   │   │   ├── Sequenzdiagramm1.mmd
+│   │   │   └── Sequenzdiagramm1.png
+│   │   └── Requirement_Engineering
+│   │       ├── Lastenheft.md
+│   │       └── Pflichtenheft.md
+│   ├── Requirement_Engineering.md
+│   ├── Requirements.md
+│   ├── Sprint_1
+│   │   ├── Architektur1.md
+│   │   ├── Design1.md
+│   │   └── Sprint_1.md
+│   └── Traceability_Matrix.md
+├── Erklärung.md
+├── lib
+│   └── temp
+├── README.md
+└── src
+    └── temp
+```
