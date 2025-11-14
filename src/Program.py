@@ -5,7 +5,7 @@ from src.Benutzeroberfläche_userinterface.SimpleGUI import SimpleGUI
 from src.Benutzeroberfläche_userinterface.ButtonInput import ButtonInput
 from src.hardwareAbstraktionsschicht.HeaterActuator import HeaterActuator
 from src.hardwareAbstraktionsschicht.TemperatureSensor import get_sensor_instance
-import time # für thread oder Timer, aber nicht zu benutzen
+import time # für thread und Timer, aber nicht zu benutzen
 
 # Zeitintervall zwischen zwei Regelzyklen in Millisekunden (100ms = 10 Zyklen/Sekunde)
 REGELKREIS_INTERVALL_MS = 100 
