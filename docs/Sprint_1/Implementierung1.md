@@ -1,3 +1,5 @@
+# Implementierung
+
 ## Traceability Matrix: Anforderung zu Implementierung
 
 | Requirement-ID | Beschreibung (Kurz) | **Sprint** | **Architektur** | Klasse(n) (SW Design) | Schnittstelle(n) (Methode) | Testfall(e) |
@@ -8,4 +10,4 @@
 | **3.1** | Temperaturregelung (MUSS) | **Sprint 1** | Core / Logic | `PIDRegler` | `calculateHeatingPower(ist: float): float` | **UT1, UT2, UT3** |
 | **3.3** | Testbarkeit des Regelalgorithmus | **Sprint 1** | Core / Logic | `PIDRegler` | `calculateHeatingPower()` (als isolierte Einheit) | **UT1, UT2, UT3** |
 | 4.1 | Sicherheitsfehleranzeige | - | UI | `SimpleGUI` | `zeigeZustand(...)` (mit "FEHLER") | - |
-| 5.1 | Akustisches Signal | - | Hardware | `AkustikSignalgeber` | `setzeLeistung()` | - |
+| 5.1 | Akustisches Signal | - | Hardware | `AkustikSignalgeber` | `setzeLeistung()` | - |  
