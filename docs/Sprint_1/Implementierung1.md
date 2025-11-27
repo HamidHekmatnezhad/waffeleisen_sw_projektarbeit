@@ -2,7 +2,7 @@
 
 ## Traceability Matrix: Anforderung zu Implementierung
 
-| Requirement-ID | Beschreibung (Kurz) | **Sprint** | **Architektur** | Klasse(n) (SW Design) | Schnittstelle(n) (Methode) | Testfall(e) |
+| Requirement-ID | Beschreibung (Kurz) | **Sprint** | **Komponenten** | Klasse(n) (SW Design) | Schnittstelle(n) (Methode) | Testfall(e) |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **1.1** | Bräunungsgrad Einstellung | **Sprint 1** | UI / App | `WaffelController`, `ButtonInput` | `verarbeiteEingabe(grad: int)` | **UT6** |
 | **1.2** | Anzeige des aktuellen Bräunungsgrades | **Sprint 1** | UI | `SimpleGUI` | `zeigeZustand(text: String)` | **UT5** |
