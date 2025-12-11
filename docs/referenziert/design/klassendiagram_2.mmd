@@ -1,0 +1,62 @@
+classDiagram
+    class WaffelController {
+        - aktuellerZustand: Zustand
+        - sollTemp: int
+        - isHeizungAktiv: boolean
+        - text_bereit: String
+        - text_aufheizen: String
+        + starteBackvorgang() void
+        + verarbeiteEingabe(grad: int) void
+        + runRegelkreisIteration() void
+    }
+
+    class ConfigLoader {
+        - config_lang_path: String
+        - default_lang: String
+        + laod_lang(lang: String) dict
+    }
+
+    class PIDRegler {
+        - sollTemperatur: float
+        - kp, ki, kd: float
+        + setzeSolltemperatur(temp: int) void
+        + calculateHeatingPower(istTemp: float) float
+    }
+    
+    class Solltabelle {
+        - gradZuTemp: Map~int, int~
+        + holeSolltemperatur(grad: int) int
+    }
+    
+    class TemperatureSensor {
+        - messIntervall: int
+        + leseTemperatur() float
+    }
+    
+    class HeaterActuator {
+        - maxLeistung: int
+        + setzeLeistung(leistung: float) void
+    }
+
+    class AkustikSignalgeber {
+        + piep(anzahl: int) void
+    }
+    
+    class ButtonInput {
+        + leseTastePlusMinus() char
+    }
+    
+    class SimpleGUI {
+        + zeigeZustand(text: String) void
+    }
+
+    
+    WaffelController "1" -- "1" PIDRegler : steuert
+    WaffelController "1" -- "1" Solltabelle : liest
+    WaffelController "1" -- "1" SimpleGUI : aktualisiert
+    ButtonInput --> WaffelController : Event
+    PIDRegler "1" -- "1" TemperatureSensor : liest
+    PIDRegler "1" -- "1" HeaterActuator : setzt
+
+    WaffelController "1" --> "1" ConfigLoader : lädt Texte
+    WaffelController "1" --> "1" AkustikSignalgeber : steuert Summer

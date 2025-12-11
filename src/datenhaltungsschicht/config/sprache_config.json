@@ -1,0 +1,14 @@
+{
+    "DE": {
+        "STANDBY": "STANDBY (from Config)",
+        "BEREIT": "BEREIT (aus Config)",
+        "AUFHEIZEN": "AUFHEIZEN (aus Config)",
+        "FEHLER": "FEHLER! (aus Config)"
+    },
+    "EN": {
+        "STANDBY": "STANDBY (from Config)",
+        "BEREIT": "READY (from Config)",
+        "AUFHEIZEN": "HEATING (from Config)",
+        "FEHLER": "ERROR! (from Config)"
+    }
+}

@@ -1,0 +1,33 @@
+graph TD
+    A[Benutzer]
+    B(ButtonInput)
+    C[WaffelController]
+    D[Solltabelle]
+    E[PIDRegler]
+    F[HeaterActuator]
+    G[SimpleGUI]
+    
+    H[ConfigLoader]
+    I[AkustikSignalgeber]
+
+    C -- "0.1: laod_lang('DE')" --> H
+    H -- "0.2: Return: Texte" --> C
+
+    A -- "1.0: Taste '+' drücken" --> B
+    B -- "1.1: verarbeiteEingabe(grad: 3)" --> C
+
+    C -- "2.0: holeSolltemperatur()" --> D
+    D -- "2.1: Return: Sollwert" --> C
+
+    C -- "3.0: setzeSolltemperatur()" --> E
+    C -- "4.0: zeigeZustand(text_aufheizen)" --> G
+
+    C -- "5.0: runRegelungszyklus()" --> E
+    E -- "5.1: setzeLeistung(1.0)" --> F
+    F -- "5.2: Return" --> E
+    E -- "5.3: Return" --> C
+    
+    C -- "6.0: zeigeZustand(text_bereit)" --> G
+    C -- "6.1: piep(3)" --> I
+    
+    G -- "7.0: Anzeige aktualisiert" --> A  

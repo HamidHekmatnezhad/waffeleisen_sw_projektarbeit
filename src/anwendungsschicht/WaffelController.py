@@ -2,6 +2,8 @@ from enum import Enum
 from steuerungsschicht_regelungsschicht.PIDRegler import PIDRegler
 from steuerungsschicht_regelungsschicht.Solltabelle import Solltabelle
 from Benutzeroberfläche_userinterface.SimpleGUI import SimpleGUI
+from datenhaltungsschicht.ConfigLoader import ConfigLoader
+from hardwareAbstraktionsschicht.AkustikSignalgeber import AkustikSignalgeber
 
 class Zustand(Enum):
     """Definiert die möglichen Zustände des Waffeleisens."""
@@ -39,6 +41,13 @@ class WaffelController:
         self._gui.zeigeZustand(Zustand.STANDBY.value)
         print("--- INFO: WaffelController initialisiert.")
 
+        # Sprint 2: buzzer and config loader        
+        self.buzzer = AkustikSignalgeber()
+        self.config_loader = ConfigLoader()
+        self.konfiguration = self.config_loader.laod_lang("DE")
+        
+        self.text_bereit = self.konfiguration["BEREIT"]
+        self.text_aufheizen = self.konfiguration["AUFHEIZEN"]
 
     def verarbeiteEingabe(self, delta_grad: int) -> None:
         """
@@ -60,9 +69,9 @@ class WaffelController:
         """
         if self._aktuellerZustand in (Zustand.STANDBY, Zustand.BEREIT):
             self._aktuellerZustand = Zustand.AUFHEIZEN
-            self._gui.zeigeZustand(Zustand.AUFHEIZEN.value)
+            self._gui.zeigeZustand(self.text_aufheizen)
             self._isHeizungAktiv = True
-            print("CONTROLLER: Backvorgang gestartet. Beginne Aufheizen...")
+            print(f"CONTROLLER: Backvorgang gestartet. {self.text_aufheizen}...")
 
     def runRegelkreisIteration(self) -> None:
         """
@@ -88,7 +97,9 @@ class WaffelController:
             # 5. Zustandsprüfung
             if ist_temp >= self._sollTemp - 2: 
                 self._aktuellerZustand = Zustand.BEREIT
-                self._gui.zeigeZustand(Zustand.BEREIT.value)
-                print("CONTROLLER: *** Waffeleisen ist BEREIT zum Backen! ***")
-            
-            print(f"Regelkreis: Ist={ist_temp}°C, Soll={self._sollTemp}°C, Leistung={leistung:.2f}")
+                self._gui.zeigeZustand(self.text_bereit)
+
+                print(f"CONTROLLER: *** {self.text_bereit} ***")
+                self.buzzer.piep(anzahl=3)
+
+            print(f"Regelkreis: Ist={ist_temp:.1f}°C, Soll={self._sollTemp}°C, Leistung={leistung:.2f}")

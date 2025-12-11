@@ -1,0 +1,31 @@
+graph TD
+    subgraph Benutzeroberfläche
+        UI[SimpleGUI / Display]
+    end
+
+    subgraph Anwendungsschicht
+        WC[WaffelController]
+    end
+
+    subgraph Steuerungs_Regelungsschicht
+        PID[PIDRegler]
+        ST[Solltabelle]
+    end
+
+    subgraph Datenhaltungsschicht_NEU
+        CL[ConfigLoader]
+    end
+
+    subgraph Hardware_Abstraktionsschicht
+        TS[TemperatureSensor]
+        HA[HeaterActuator]
+        AS[AkustikSignalgeber]
+    end
+
+    UI --> WC
+    WC --> PID
+    WC --> ST
+    WC --> CL
+    WC --> AS
+    PID --> TS
+    PID --> HA

@@ -1,0 +1,47 @@
+sequenceDiagram
+    actor Benutzer
+    participant G as SimpleGUI
+    participant C as WaffelController
+    participant CL as ConfigLoader
+    participant P as PIDRegler
+    participant S as TemperatureSensor
+    participant H as HeaterActuator
+    participant B as AkustikSignalgeber
+
+    title Sprint 2: Initialisierung & Back-Ende mit Signal
+
+    note over C, CL: 1. Konfiguration laden
+    C->>CL: 1. laod_lang("DE")
+    activate CL
+    CL-->>C: return dict { "BEREIT": "...", ... }
+    deactivate CL
+
+    note over Benutzer, C: 2. Backvorgang starten
+    Benutzer->>C: starteBackvorgang()
+    activate C
+    C->>G: zeigeZustand(text_aufheizen)
+    deactivate C
+
+    loop Regelung (alle 100ms)
+        C->>P: runRegelkreisIteration()
+        activate P
+        
+        P->>S: leseTemperatur()
+        S-->>P: return istTemp
+        
+        P->>P: calculateHeatingPower(istTemp)
+        
+        P->>H: setzeLeistung(leistung)
+        deactivate P
+
+        opt Zieltemperatur erreicht
+            note right of C: Sprint 2 Features: Text & Sound
+            
+            C->>G: zeigeZustand(text_bereit)
+            
+            C->>B: piep(anzahl=3)
+            activate B
+            B-->>Benutzer: ♫ PIEP PIEP PIEP ♫
+            deactivate B
+        end
+    end
