@@ -1,0 +1,61 @@
+classDiagram
+    class WaffelController {
+        - aktuellerZustand: Zustand
+        - sollTemp: int
+        - isHeizungAktiv: boolean
+        + starteBackvorgang() void
+        + verarbeiteEingabe(grad: int) void
+        + runRegelkreisIteration() void
+    }
+
+    class ConfigLoader {
+        + laod_lang(lang: String) dict
+    }
+
+    class DataLogger {
+        - messwerte: List
+        - system_logs: List
+        + log_messwert(temp: float) void
+        + log_system_event(nachricht: String) void
+        + get_logs() List
+    }
+
+    class PIDRegler {
+        - sollTemperatur: float
+        + calculateHeatingPower(istTemp: float) float
+    }
+    
+    class Solltabelle {
+        + holeSolltemperatur(grad: int) int
+    }
+    
+    class TemperatureSensor {
+        + leseTemperatur() float
+    }
+    
+    class HeaterActuator {
+        + setzeLeistung(leistung: float) void
+    }
+
+    class AkustikSignalgeber {
+        + piep(anzahl: int) void
+    }
+    
+    class ButtonInput {
+        + leseTastePlusMinus() char
+    }
+    
+    class SimpleGUI {
+        + zeigeZustand(text: String) void
+    }
+
+    WaffelController "1" -- "1" PIDRegler : steuert
+    WaffelController "1" -- "1" Solltabelle : nutzt
+    WaffelController "1" -- "1" SimpleGUI : aktualisiert
+    ButtonInput --> WaffelController : Input
+    PIDRegler "1" -- "1" TemperatureSensor : liest
+    PIDRegler "1" -- "1" HeaterActuator : setzt
+    WaffelController "1" --> "1" ConfigLoader : lädt
+    WaffelController "1" --> "1" AkustikSignalgeber : steuert
+
+    WaffelController "1" --> "1" DataLogger : protokolliert

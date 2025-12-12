@@ -1,0 +1,749 @@
+--- SYSTEM START: Initialisierung der Komponenten ---
+--- INFO: TemperatureSensor erstellt.
+--- INFO: HeaterActuator Instanz erstellt.
+--- INFO: Solltabelle Initialisierung abgeschlossen.
+--- INFO: PIDRegler Instanz erstellt und mit Sensor verbunden.
+--- INFO: SimpleGUI erstellt
+GUI_UPDATE: Anzeige wechselt zu 'STANDBY'
+--- INFO: WaffelController initialisiert.
+--- INFO: AkustikSignalgeber initialisiert.
+--- INFO: Konfiguration erfolgreich geladen.
+--- INFO: DataLogger initialisiert.
+++ LOG: [2025-12-12 18:31:14] System gestartet - Waffeleisen bereit.
+--- INFO: ButtonInput Instanz erstellt und mit Controller verbunden.
+
+--- PROGRAMM BEREIT ---
+SIMULATION: Benutzer wählt Grad 5 (durch zwei Klicks).
+CONTROLLER: Neuer Grad 4 gewählt. Soll-Temperatur: 195°C
+GUI_UPDATE: Anzeige wechselt zu 'Grad 4 / 195°C'
+SIMULATION: Taste '+' gedrückt.
+CONTROLLER: Neuer Grad 5 gewählt. Soll-Temperatur: 210°C
+GUI_UPDATE: Anzeige wechselt zu 'Grad 5 / 210°C'
+SIMULATION: Taste '+' gedrückt.
+GUI_UPDATE: Anzeige wechselt zu 'AUFHEIZEN (aus Config)'
+CONTROLLER: Backvorgang gestartet. AUFHEIZEN (aus Config)...
+
+--- START REGELKREIS-SIMULATION ---
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=25.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=90.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=90.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=91.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=91.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=92.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=92.4°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=93.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=93.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=94.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=94.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=95.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=95.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=96.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=96.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=97.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=97.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=98.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=98.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=99.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=99.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=100.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=100.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=101.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=101.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=102.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=102.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=103.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=103.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=104.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=104.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=105.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=105.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=105.9°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=106.4°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=106.9°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=107.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=107.9°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=108.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=109.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=109.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=110.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=110.4°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=111.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=111.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=112.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=112.4°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=112.9°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=113.4°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=113.9°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=114.4°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=115.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=115.4°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=115.9°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=116.4°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=116.9°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=117.3°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=117.9°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=118.4°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=118.9°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=119.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=120.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=120.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=121.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=121.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=122.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=122.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=123.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=123.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=124.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=124.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=125.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=125.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=126.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=126.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=127.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=127.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=128.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=128.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=129.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=129.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=130.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=130.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=131.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=131.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=132.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=132.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=133.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=133.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=134.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=134.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=135.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=135.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=136.2°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=136.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=137.2°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=137.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=138.2°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=138.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=139.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=139.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=140.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=140.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=141.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=141.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=142.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=142.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=143.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=143.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=144.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=144.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=145.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=145.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=146.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=146.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=147.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=147.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=148.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=148.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=149.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=149.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=150.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=150.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=151.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=151.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=152.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=152.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=153.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=153.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=154.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=154.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=155.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=155.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=156.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=156.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=157.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=157.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=158.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=158.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=159.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=159.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=160.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=160.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=161.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=161.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=162.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=162.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=163.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=163.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=164.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=164.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=165.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=165.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=166.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=166.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=167.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=167.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=168.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=168.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=169.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=169.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=170.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=170.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=171.2°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=171.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=172.2°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=172.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=173.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=173.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=174.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=174.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=175.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=175.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=176.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=176.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=177.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=177.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=178.2°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=178.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=179.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=179.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=180.2°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=180.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=181.2°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=181.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=182.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=182.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=183.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=183.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=184.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=184.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=185.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=185.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=186.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=186.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=187.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=187.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=188.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=188.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=189.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=189.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=190.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=190.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=191.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=191.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=192.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=192.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=193.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=193.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=194.0°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=194.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=195.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=195.5°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=196.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=196.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=197.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=197.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=198.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=198.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=199.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=199.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=200.2°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=200.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=201.2°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=201.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=202.2°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=202.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=203.2°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=203.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=204.2°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=204.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=205.2°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=205.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=206.2°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=206.7°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=207.1°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+Regelkreis: Ist=207.6°C, Soll=210°C, Leistung=1.00
+Status von HeaterActoutor:
+	 EIN (100%)
+GUI_UPDATE: Anzeige wechselt zu 'BEREIT (aus Config)'
+++ LOG: [2025-12-12 18:31:38] Backvorgang beendet. End-Temp: 208.1°C
+CONTROLLER: *** BEREIT (aus Config) ***
+
+ PIEP! (3 Mal)
+	 Piep 1...
+	 Piep 2...
+	 Piep 3...
+Regelkreis: Ist=208.1°C, Soll=210°C, Leistung=1.00
+*** SYSTEM-INFO: Endzustand erreicht. Zeitplanung gestoppt. ***

@@ -62,7 +62,7 @@ Die Teststrategie erweitert das Vorgehen aus Sprint 1 um Dateisystem-Tests und M
 * Dynamisches Umschalten der Sprache zur Laufzeit (nur beim Start).
 
 ## Definition Testfälle inkl. betroffener Requirements
-[Testfälle](../../tests/Testfaelle.md)
+[Testfälle](/docs/referenziert/Test/testfaelle.md)
 
 ## Dokumentation der Ergebnisse
-[Testergebnisse](../../tests/Testergebnisse.md)
+[Testergebnisse](/docs/referenziert/Test/Testergebnisse.md)

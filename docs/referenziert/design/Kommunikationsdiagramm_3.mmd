@@ -1,0 +1,34 @@
+graph TD
+    A[Benutzer]
+    B(ButtonInput)
+    C[WaffelController]
+    D[Solltabelle]
+    E[PIDRegler]
+    F[HeaterActuator]
+    G[SimpleGUI]
+    
+    H[ConfigLoader]
+    I[AkustikSignalgeber]
+
+    J[DataLogger]
+
+    C -- "0.1: laod_lang()" --> H
+    C -- "0.2: log_system_event('Start')" --> J
+
+    A -- "1.0: Taste drücken" --> B
+    B -- "1.1: verarbeiteEingabe()" --> C
+
+    C -- "2.0: holeSolltemperatur()" --> D
+    
+    C -- "3.0: zeigeZustand(AUFHEIZEN)" --> G
+
+    C -- "4.0: runRegelungszyklus()" --> E
+    
+    C -- "4.1: log_messwert(temp)" --> J
+
+    E -- "4.2: setzeLeistung()" --> F
+    
+    C -- "5.0: zeigeZustand(BEREIT)" --> G
+    C -- "5.1: piep(3)" --> I
+    
+    C -- "5.2: log_system_event('Fertig')" --> J

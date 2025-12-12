@@ -4,6 +4,7 @@ from steuerungsschicht_regelungsschicht.Solltabelle import Solltabelle
 from Benutzeroberfläche_userinterface.SimpleGUI import SimpleGUI
 from datenhaltungsschicht.ConfigLoader import ConfigLoader
 from hardwareAbstraktionsschicht.AkustikSignalgeber import AkustikSignalgeber
+from datenhaltungsschicht.DataLogger import DataLogger
 
 class Zustand(Enum):
     """Definiert die möglichen Zustände des Waffeleisens."""
@@ -45,6 +46,10 @@ class WaffelController:
         self.buzzer = AkustikSignalgeber()
         self.config_loader = ConfigLoader()
         self.konfiguration = self.config_loader.laod_lang("DE")
+
+        # Sprint 3: DataLogger initialisieren und Start-Event loggen
+        self.logger = DataLogger()
+        self.logger.log_system_event("System gestartet - Waffeleisen bereit.")
         
         self.text_bereit = self.konfiguration["BEREIT"]
         self.text_aufheizen = self.konfiguration["AUFHEIZEN"]
@@ -82,6 +87,9 @@ class WaffelController:
             
             # 1. Ist-Temperatur lesen 
             ist_temp = self._regler.sensor.leseTemperatur() 
+
+            # logger
+            self.logger.log_messwert(ist_temp)
             
             # 2. Stellgröße berechnen 
             leistung = self._regler.calculateHeatingPower(ist_temp)
@@ -98,6 +106,8 @@ class WaffelController:
             if ist_temp >= self._sollTemp - 2: 
                 self._aktuellerZustand = Zustand.BEREIT
                 self._gui.zeigeZustand(self.text_bereit)
+
+                self.logger.log_system_event(f"Backvorgang beendet. End-Temp: {ist_temp:.1f}°C")
 
                 print(f"CONTROLLER: *** {self.text_bereit} ***")
                 self.buzzer.piep(anzahl=3)

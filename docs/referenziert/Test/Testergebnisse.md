@@ -111,3 +111,13 @@ Umgesetzt in src/tests/PIDReglerTest.py (Simulierte Umgebung).
 **Requirement:** 5.1
 
 ---
+
+### UT9 – DataLogger Messwerte
+**Ziel:** Testen der Speicherung von Temperaturen.
+**Ergebnis:** Werte wurden korrekt in die Liste geschrieben.
+**Status:** Bestanden (Requirement 2.1)
+
+### UT10 – DataLogger Events
+**Ziel:** Testen der Event-Logs.
+**Ergebnis:** Nachrichten wurden korrekt mit Zeitstempel formatiert und gespeichert.
+**Status:** Bestanden (Requirement 5.2)

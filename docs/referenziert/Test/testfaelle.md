@@ -96,3 +96,14 @@
 
 ---
 
+### UT9 – Protokollierung von Messwerten (Sprint 3)
+* **Ziel:** Verifikation, dass Temperaturwerte korrekt im Speicher abgelegt werden.
+* **Eingabe:** `log_messwert(180.5)`
+* **Erwartete Reaktion:** Der Wert 180.5 wird der Liste `messwerte` hinzugefügt.
+* **Requirement:** 2.1
+
+### UT10 – Protokollierung von System-Events (Sprint 3)
+* **Ziel:** Verifikation, dass Ereignisse (Start/Stopp) mit Zeitstempel gespeichert werden.
+* **Eingabe:** `log_system_event("Test")`
+* **Erwartete Reaktion:** Ein String mit Zeitstempel und "Test" landet in `system_logs`.
+* **Requirement:** 5.2

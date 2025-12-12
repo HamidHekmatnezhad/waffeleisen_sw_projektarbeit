@@ -1,0 +1,40 @@
+graph TD
+    subgraph Benutzeroberfläche
+        UI[SimpleGUI / Display]
+    end
+
+    subgraph Anwendungsschicht
+        WC[WaffelController]
+    end
+
+    subgraph Datenhaltungsschicht
+        CL[ConfigLoader]
+        DL[DataLogger]
+    end
+
+    subgraph Steuerungs_Regelungsschicht
+        PID[PIDRegler]
+        ST[Solltabelle]
+    end
+
+    subgraph Hardware_Abstraktionsschicht
+        TS[TemperatureSensor]
+        HA[HeaterActuator]
+        AS[AkustikSignalgeber]
+    end
+
+    
+    UI <--> WC
+    WC --> PID
+    WC --> ST
+
+    WC -- "lade Config" --> CL
+    WC -- "logge Daten (NEU)" --> DL
+
+    WC --> AS
+
+    PID --> TS
+    PID --> HA
+    
+    class WC controller;
+    class DL newComponent;

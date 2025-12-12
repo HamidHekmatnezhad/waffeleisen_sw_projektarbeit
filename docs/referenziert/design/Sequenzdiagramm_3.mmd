@@ -1,0 +1,37 @@
+sequenceDiagram
+    actor Benutzer
+    participant UI as SimpleGUI
+    participant Controller as WaffelController
+    participant Logger as DataLogger
+    participant Regler as PIDRegler
+    participant Sensor as TemperatureSensor
+    participant Buzzer as AkustikSignalgeber
+
+    title Sprint 3: Regelkreis mit Daten-Protokollierung
+
+    loop Regelung (alle 100ms)
+        
+        Controller->>Regler: 1. runRegelkreisIteration()
+        activate Regler
+        
+        Regler->>Sensor: 1.1 leseTemperatur()
+        Sensor-->>Regler: return istTemp
+
+        rect rgb(220, 255, 220)
+            note right of Controller: Req 2.1: Logging
+            Controller->>Logger: 2. log_messwert(istTemp)
+        end
+
+        Regler->>Regler: 3. calculateHeatingPower()
+        deactivate Regler
+
+        opt Wenn Zieltemperatur erreicht
+            Controller->>UI: 4. zeigeZustand(BEREIT)
+            Controller->>Buzzer: 5. piep(3)
+            
+            rect rgb(220, 255, 220)
+                note right of Controller: Req 5.2: Event Log
+                Controller->>Logger: 6. log_system_event("Fertig")
+            end
+        end
+    end
