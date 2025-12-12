@@ -79,3 +79,35 @@ Umgesetzt in src/tests/PIDReglerTest.py (Simulierte Umgebung).
 **Status:** Bestanden
 
 **Requirement:** 1.1
+
+---
+
+### UT7 – Laden der Konfiguration und Mehrsprachigkeit
+
+**Ziel:** Verifikation der Klasse `ConfigLoader`, um sicherzustellen, dass Texte korrekt aus der externen Datenquelle (JSON oder Fallback) geladen werden.
+
+**Eingabe:** Aufruf der Methode `laod_lang("DE")`.
+
+**Erwartete Reaktion:** Rückgabe eines Dictionaries, das die notwendigen Schlüssel ("BEREIT", "AUFHEIZEN", "FEHLER") enthält.
+
+**Ergebnis:** Die Konfiguration wurde erfolgreich geladen. Der `WaffelController` konnte auf die Texte zugreifen und diese in der GUI anzeigen.
+
+**Status:** Bestanden
+
+**Requirement:** 1.4, 4.2
+
+### UT8 – Akustische Signalausgabe (Buzzer)
+
+**Ziel:** Überprüfung der Hardware-Abstraktion `AkustikSignalgeber` und der Methode `piep()`.
+
+**Eingabe:** Aufruf der Methode `piep(anzahl=1)`.
+
+**Erwartete Reaktion:** Die Methode führt die simulierte Signalausgabe (Konsolen-Print) ohne Laufzeitfehler aus.
+
+**Ergebnis:** Der Aufruf erfolgte fehlerfrei. Die Integration im Controller (Auslösen bei Zustand `BEREIT`) war erfolgreich.
+
+**Status:** Bestanden
+
+**Requirement:** 5.1
+
+---

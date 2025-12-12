@@ -69,3 +69,30 @@
 * **Erwarteter Folgezustand:** `_sollTemp` im Controller ist `195`.
 * **Klassen:** `ButtonInput`, `WaffelController`, `Solltabelle`
 * **Requirement:** 1.1 (Einstellung), 3.1 (Zieltemperatur)
+
+---
+
+### UT7 – Laden der Konfiguration und Mehrsprachigkeit (Sprint 2)
+
+* **Ziel:** Verifikation der Klasse `ConfigLoader`, um sicherzustellen, dass Texte dynamisch geladen werden können (Persistence Layer).
+* **Ausgangszustand:** `ConfigLoader` ist initialisiert. Keine Konfiguration im Speicher.
+* **Ereignis:** Aufruf der Methode `laod_lang("DE")`.
+* **Eingabe:** Sprachkürzel "DE".
+* **Erwartete Reaktion:** Die Methode gibt ein Dictionary zurück, das zwingend die Schlüssel "BEREIT", "AUFHEIZEN" und "FEHLER" enthält.
+* **Erwarteter Folgezustand:** Der `WaffelController` verfügt über die korrekten Anzeigetexte.
+* **Klasse:** `ConfigLoader`
+* **Requirement:** 1.4 (Konfigurierbare Texte), 4.2 (Mehrsprachigkeit)
+
+### UT8 – Akustische Signalausgabe / Buzzer (Sprint 2)
+
+* **Ziel:** Überprüfung der Hardware-Abstraktion `AkustikSignalgeber` und der Methode `piep()`.
+* **Ausgangszustand:** `AkustikSignalgeber` ist initialisiert.
+* **Ereignis:** Der Backvorgang ist abgeschlossen (Zustand wechselt zu `BEREIT`).
+* **Eingabe:** Aufruf der Methode `piep(anzahl=3)`.
+* **Erwartete Reaktion:** Die Methode führt die simulierte Signalausgabe (Konsolen-Print) ohne Laufzeitfehler aus.
+* **Erwarteter Folgezustand:** Der Benutzer erhält akustisches Feedback.
+* **Klasse:** `AkustikSignalgeber`
+* **Requirement:** 5.1 (Akustisches Signal)
+
+---
+
