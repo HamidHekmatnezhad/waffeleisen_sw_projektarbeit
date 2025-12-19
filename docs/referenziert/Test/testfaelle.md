@@ -94,6 +94,13 @@
 * **Klasse:** `AkustikSignalgeber`
 * **Requirement:** 5.1 (Akustisches Signal)
 
+### IT11 – Überprüfung der Systemreaktionszeit (Sprint 2)
+* **Ziel:** Eta nishchit kora jeno user-er kono button press ba input dewar por system 2 second-er niche response kore (Requirement 1.3).
+* **Vorgehen:** `ButtonInput` theke `verarbeiteEingabe()` method-ti call korar shomoy total processing-er duration `time.time()` diye porimap kora hobe.
+* **Erwartete Reaktion:** Shomosto processing-er shomoy (Input theke Logic porjonto) 2.0 second-er kom hote hobe.
+* **Komponenten:** `ButtonInput` (UI) + `WaffelController` (App-Logic).
+* **Requirement:** 1.3
+
 ---
 
 ### UT9 – Protokollierung von Messwerten (Sprint 3)
@@ -107,3 +114,17 @@
 * **Eingabe:** `log_system_event("Test")`
 * **Erwartete Reaktion:** Ein String mit Zeitstempel und "Test" landet in `system_logs`.
 * **Requirement:** 5.2
+
+### IT12 – Sensor-Plausibilität bei Umgebungstemperatur (Sprint 3)
+* **Ziel:** Sicherstellen, dass der `WaffelController` die Daten vom `TemperatureSensor` beim Systemstart korrekt einliest und interpretiert.
+* **Vorgehen:** Abruf der aktuellen Ist-Temperatur durch den Controller unmittelbar nach der Initialisierung, während die Heizung deaktiviert ist.
+* **Erwartete Reaktion:** Der gelesene Wert liegt in einem plausiblen Bereich für die Umgebungstemperatur (ca. 18°C - 25°C) und das System verbleibt stabil im Zustand STANDBY.
+* **Komponenten:** `TemperatureSensor` (Hardware-Layer) + `WaffelController` (App-Layer).
+* **Requirement:** 2.3
+
+### UT13 – Mathematische Leistungsbegrenzung (Sprint 3)
+* **Ziel:** Verifikation, dass die berechnete Heizleistung den physikalischen Grenzwert von 100W niemals überschreitet (Requirement 3.2).
+* **Vorgehen:** Isolierter Test der Methode `calculateHeatingPower()` im `PIDRegler`. Es werden verschiedene Stellgrößen ($u$) als Input übergeben, insbesondere Grenzwerte ($u = 1.0$) und theoretische Werte oberhalb der Grenze ($u > 1.0$).
+* **Erwartete Reaktion:** Die Methode darf als Ergebnis maximal den Wert 100.0 (entspricht 100W) zurückgeben. Eine Begrenzung (Clamping) muss im Code sichergestellt sein.
+* **Komponenten:** `PIDRegler` (Core-Logic).
+* **Requirement:** 3.2

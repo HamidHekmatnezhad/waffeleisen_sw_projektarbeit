@@ -2,11 +2,12 @@
 
 ## **1. Ziel der Tests**
 
-Das Ziel der Tests in Sprint 2 ist die Verifikation und Validierung der neu eingeführten **Datenhaltungsschicht** und der **erweiterten Hardware-Abstraktion** im Hinblick auf:
+Das Ziel der Tests in Sprint 2 ist die Verifikation der erweiterten Hardware-Abstraktion, der Benutzerschnittstelle und der Echtzeit-Performance des Systems:
 
-* **Datenintegrität & Persistenz:** Sicherstellen, dass Konfigurationsdaten (Texte, Spracheinstellungen) korrekt aus externen Quellen (JSON) geladen werden (Req 1.4, 4.2).
+* **Datenintegrität & Persistenz:** Sicherstellen, dass Konfigurationsdaten (Texte, Spracheinstellungen) korrekt geladen werden (Req 1.4, 4.2).
 * **Feedback-Systeme:** Überprüfung der korrekten Ansteuerung des akustischen Signalgebers bei Prozessende (Req 5.1).
-* **Integration:** Sicherstellen, dass der `WaffelController` die geladenen Texte korrekt an die GUI weiterleitet und Hardware-Signale zum richtigen Zeitpunkt auslöst.
+* **Performance (Echtzeitfähigkeit):** Verifikation, dass die Systemreaktionszeit auf Benutzereingaben unter 2 Sekunden liegt (Req 1.3).
+* **Integration:** Sicherstellen, dass der `WaffelController` die geladenen Texte korrekt an die GUI weiterleitet und die Eingabekette performant verarbeitet wird.
 
 ---
 
@@ -14,33 +15,34 @@ Das Ziel der Tests in Sprint 2 ist die Verifikation und Validierung der neu eing
 
 ### 2.1 Unit Tests 
 
-Ziel: Isolierte Prüfung der neuen Klassen, um die Funktionsfähigkeit der Konfiguration und Hardware-Simulation sicherzustellen.
+Ziel: Isolierte Prüfung der neuen Klassen zur Sicherstellung der korrekten internen Logik.
 
-* **Abdeckung:** * Logik der `ConfigLoader`-Klasse (Laden, Fallback auf Defaults).
-    * Logik der `AkustikSignalgeber`-Klasse (Simulierte Ausgabe).
-* **Beispiele:** * **UT7:** Laden einer Sprachkonfiguration und Prüfung auf Vorhandensein notwendiger Keys ("BEREIT", "AUFHEIZEN").
-    * **UT8:** Aufruf der `piep()`-Methode ohne Laufzeitfehler.
+* **Abdeckung:** * Logik der `ConfigLoader`-Klasse (Erfolgreiches Laden und Fallback-Mechanismen).
+    * Logik der `AkustikSignalgeber`-Klasse (Korrekte Simulation der Tonausgabe).
+* **Beispiele:** * **UT7:** Validierung der geladenen Sprach-Keys aus der JSON-Konfiguration.
+    * **UT8:** Aufruf der `piep()`-Methode und Prüfung der Konsolenausgabe.
 
 ### 2.2 Integration Tests
 
-Ziel: Überprüfung der Zusammenarbeit zwischen dem Controller und den neuen Komponenten.
+Ziel: Überprüfung des Zusammenspiels zwischen Controller, GUI und der Eingabeverarbeitung.
 
-* **Abdeckung:** * Datenfluss von `ConfigLoader` -> `WaffelController` -> `SimpleGUI` (Anzeige korrekter Texte).
-    * Kontrollfluss von `WaffelController` -> `AkustikSignalgeber` (Signalton bei Zustand `BEREIT`).
+* **Abdeckung:** * **IT5:** Datenfluss von `ConfigLoader` -> `WaffelController` -> `SimpleGUI` (Anzeige sprachspezifischer Texte).
+    * **IT11:** Zeitmessung der gesamten Verarbeitungskette: `ButtonInput` -> `WaffelController` (Sicherstellung der Reaktionszeit).
+    * Kontrollfluss von `WaffelController` -> `AkustikSignalgeber` (Auslösen des Signals bei Zustandswechsel zu BEREIT).
 
 ---
 
 ## **3. Teststrategie**
 
-Die Teststrategie erweitert das Vorgehen aus Sprint 1 um Dateisystem-Tests und Mocking-Techniken.
+Die Teststrategie kombiniert funktionale Prüfungen mit Performance-Messungen.
 
-* **Automatisierte Tests:** Unit-Tests prüfen, ob die JSON-Struktur korrekt geparst wird und ob die Klassen instanziierbar sind.
-* **Manuelle Tests:** Da der Summer (Buzzer) nur simuliert ist (Print-Ausgabe), muss visuell in der Konsole geprüft werden, ob "PIEP" ausgegeben wird, wenn die Waffel fertig ist. Ebenso wird geprüft, ob die GUI-Texte sich ändern, wenn die Config angepasst wird.
-* **Regressionstests:** Sicherstellen, dass die bestehende Regelung (PID) durch die Umbauten im Controller nicht beeinträchtigt wurde.
+* **Automatisierte Tests:** Durchführung einer Zeitmessung mittels `time.time()` für IT11, um die Verarbeitungsgeschwindigkeit objektiv zu validieren.
+* **Manuelle Tests:** Visuelle Kontrolle der GUI-Texte bei verschiedenen Konfigurationsdateien und Überwachung der Konsolenausgabe für den simulierten Buzzer.
+* **Regressionstests:** Sicherstellen, dass die Einführung der Konfigurationsschicht die Stabilität des PID-Regelkreises aus Sprint 1 nicht negativ beeinflusst.
 
 ### Testumgebung:
 
-* **Simulierte Dateien:** Verwendung einer lokalen `config.json` (oder Default-Werte im Code) für Tests.
+* **Zeit-Simulation:** Verwendung von System-Timern zur Messung der Millisekunden-Reaktion.
 * **Simulierte Hardware:** Konsolenausgabe als Ersatz für den physischen Summer.
 * **Plattform:** Python/Tkinter.
 
@@ -51,15 +53,14 @@ Die Teststrategie erweitert das Vorgehen aus Sprint 1 um Dateisystem-Tests und M
 ### In-Scope:
 
 * Laden von Sprachdaten aus JSON (Req 1.4, 4.2).
-* Anzeige von Fehlermeldungen via Config (Req 4.1).
+* **Einhaltung der maximalen Reaktionszeit von 2 Sekunden (Req 1.3).**
 * Auslösen des akustischen Signals (Req 5.1).
-* Integration der neuen Komponenten in den `WaffelController`.
+* Anzeige von Fehlermeldungen via Config (Req 4.1).
 
 ### Out-of-Scope:
 
-* Physische Hardware-Anbindung (echter GPIO-Buzzer).
-* Komplexes Error-Handling bei beschädigten JSON-Dateien (nur Basic-Fallback getestet).
-* Dynamisches Umschalten der Sprache zur Laufzeit (nur beim Start).
+* Anbindung physischer GPIO-Hardware (echter Buzzer).
+* Dynamisches Umschalten der Sprache während des laufenden Betriebs (nur Initialisierung).
 
 ## Definition Testfälle inkl. betroffener Requirements
 [Testfälle](/docs/referenziert/Test/testfaelle.md)

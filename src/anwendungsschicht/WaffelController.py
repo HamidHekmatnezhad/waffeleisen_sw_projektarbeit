@@ -56,7 +56,7 @@ class WaffelController:
 
     def verarbeiteEingabe(self, delta_grad: int) -> None:
         """
-        [Req 1.1] Verarbeitet die Eingabe vom Benutzer (von ButtonInput ausgelöst).
+        Verarbeitet die Eingabe vom Benutzer (von ButtonInput ausgelöst).
         """
         neuer_grad = self._aktueller_grad + delta_grad
         
@@ -80,7 +80,7 @@ class WaffelController:
 
     def runRegelkreisIteration(self) -> None:
         """
-        [Req 3.1] Führt eine Iteration des Regelkreises aus (Kern der Applikation).
+        Führt eine Iteration des Regelkreises aus (Kern der Applikation).
         Diese Methode wird zyklisch von einem Timer/Scheduler aufgerufen.
         """
         if self._aktuellerZustand == Zustand.AUFHEIZEN:
@@ -113,3 +113,19 @@ class WaffelController:
                 self.buzzer.piep(anzahl=3)
 
             print(f"Regelkreis: Ist={ist_temp:.1f}°C, Soll={self._sollTemp}°C, Leistung={leistung:.2f}")
+
+    
+    def stoppeProzess(self):
+        """
+        Stoppt den aktuellen Backvorgang sofort aus Sicherheitsgründen 
+        oder durch Benutzabbruch.
+        """
+        self.zustand = "STANDBY" 
+        
+        if hasattr(self, 'heater_actuator'):
+            self.heater_actuator.set_power(0.0)
+        
+        if hasattr(self, 'logger'):
+            self.logger.log_event("MANUAL_STOP: Heizvorgang abgebrochen.")
+        
+        print("System wurde sicher gestoppt.")

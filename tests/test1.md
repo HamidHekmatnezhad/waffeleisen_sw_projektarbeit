@@ -23,7 +23,7 @@ Ziel: Prüfung der kleinstmöglichen Testeinheiten, um fehlerhafte **Kernlogik**
 
 Ziel: Überprüfung der Zusammenarbeit und korrekten Aufrufsyntax zwischen zwei oder mehr Komponenten.
 
-* **Abdeckung:** Datenfluss von `ButtonInput` zum `WaffelController` zur `Solltabelle` (UT6) und von `TemperatureSensor` zum `PIDRegler` (UT4).
+* **Abdeckung:** Datenfluss von `ButtonInput` zum `WaffelController` zur `Solltabelle` (**IT6**) und von `TemperatureSensor` zum `PIDRegler` (**IT4**).
 
 ---
 
