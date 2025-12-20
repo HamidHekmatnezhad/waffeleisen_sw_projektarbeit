@@ -46,10 +46,11 @@ def main():
     regler.heater_aktuator = aktor 
     
     # 3. GUI
-    gui = SimpleGUI()
+    gui = SimpleGUI(controller=None)
     
     # 4. WaffelControllers
     controller = WaffelController(gui=gui, regler=regler, tabelle=solltabelle)
+    gui.controller = controller
     controller_instance = controller 
     
     # 5. Eingabe 
@@ -79,5 +80,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-# noch nicht getestet.

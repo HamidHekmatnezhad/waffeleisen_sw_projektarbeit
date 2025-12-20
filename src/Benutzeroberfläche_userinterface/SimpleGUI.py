@@ -5,8 +5,9 @@ class SimpleGUI:
     Klasse zur Implementierung des Display-Controllers (UI).
     """
     
-    def __init__(self):
+    def __init__(self, controller=None):
         """Initialisiert das GUI-Fenster und alle Elemente."""
+        self.controller = controller
         self.aktueller_zustand = "STANDBY"
         self.root = tk.Tk()
         self.zustands_text = tk.StringVar(value=self.aktueller_zustand)
@@ -17,7 +18,7 @@ class SimpleGUI:
     def _init_fenster(self):
         """Erstellt alle notwendigen Tkinter-Elemente."""
         self.root.title("Waffeleisen-Display")
-        self.root.geometry("350x150")
+        self.root.geometry("350x200")
         
         self.zustands_label = tk.Label(
             self.root, 
@@ -28,8 +29,23 @@ class SimpleGUI:
             height=3
         )
         self.zustands_label.pack(pady=20)
+
+        tk.Button(
+            self.root, 
+            text="STOP (Not-Aus)", 
+            command=self._handle_stop_click,
+            bg="red", 
+            fg="white",
+            font=("Arial", 10, "bold")
+        ).pack(pady=5)
         
         tk.Button(self.root, text="CLOSE", command=self.root.quit).pack()
+
+    def _handle_stop_click(self):
+        if self.controller is not None:
+            self.controller.stoppeProzess()
+        else:
+            print("FEHLER: Controller noch nicht verbunden!")
 
     def zeigeZustand(self, text: str) -> None:
         """

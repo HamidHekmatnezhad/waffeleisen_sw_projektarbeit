@@ -113,19 +113,21 @@ class WaffelController:
                 self.buzzer.piep(anzahl=3)
 
             print(f"Regelkreis: Ist={ist_temp:.1f}°C, Soll={self._sollTemp}°C, Leistung={leistung:.2f}")
-
     
     def stoppeProzess(self):
         """
         Stoppt den aktuellen Backvorgang sofort aus Sicherheitsgründen 
         oder durch Benutzabbruch.
         """
-        self.zustand = "STANDBY" 
+        self._aktuellerZustand = Zustand.STANDBY
+        self._isHeizungAktiv = False
         
-        if hasattr(self, 'heater_actuator'):
-            self.heater_actuator.set_power(0.0)
+        self._gui.zeigeZustand(Zustand.STANDBY.value)
+
+        if hasattr(self._regler, 'heater_aktuator'):
+            self._regler.heater_aktuator.setzeLeistung(0.0)
         
         if hasattr(self, 'logger'):
-            self.logger.log_event("MANUAL_STOP: Heizvorgang abgebrochen.")
+            self.logger.log_system_event("MANUAL_STOP: Heizvorgang abgebrochen / Not-Aus.")
         
-        print("System wurde sicher gestoppt.")
+        print("CONTROLLER: System wurde sicher in den STANDBY-Modus versetzt.")

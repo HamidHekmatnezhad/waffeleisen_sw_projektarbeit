@@ -165,5 +165,17 @@ Damit ist nachgewiesen, dass das System die Hardware-Anforderungen zum Energieve
 
 **Status:** Bestanden
 
-**Requirement:** 3.2
+**Requirement:** 3.2    
+
+### IT14 – Verfügbarkeit der Sicherheitsabschaltung (Sprint 3)
+
+**Ziel:** Nachweis der sofortigen Deaktivierung der Heizleistung bei Systemstopp oder manuellem Abbruch (Requirement 5.3).
+
+**Vorgehen:** Während eines aktiven Aufheizvorgangs (simulierte Stellgröße > 0) wurde die Methode `stoppeProzess()` über die Benutzeroberfläche (STOP-Button) aufgerufen. Dabei wurde die Reaktion des `HeaterActuator`, der Zustandswechsel im `WaffelController` sowie die Protokollierung im `DataLogger` überprüft.
+
+**Ergebnis:** Nach Auslösen der Funktion wurde die Heizleistung unmittelbar auf **0.0W** herabgesetzt. Der Systemstatus wechselte korrekt von `AUFHEIZEN` zu `STANDBY`. Die Anzeige in der GUI wurde verzögerungsfrei aktualisiert. Das Ereignis wurde zudem erfolgreich im `DataLogger` mit dem Zeitstempel "MANUAL_STOP" hinterlegt. Die Sicherheitskette zwischen UI, Logik und Hardware-Abstraktion funktioniert einwandfrei.
+
+**Status:** Bestanden
+
+**Requirement:** 5.3
 

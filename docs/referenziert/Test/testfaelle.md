@@ -34,7 +34,7 @@
 * **Klasse:** `PIDRegler`
 * **Requirement:** 3.1 (Regelungslogik)
 
-### UT4 – Zusammenspiel Sensor und Controller _(Integrationsebene)_
+### IT4 – Zusammenspiel Sensor und Controller _(Integrationsebene)_
 
 * **Ziel:** Prüfung, ob der `WaffelController` korrekt auf die Singleton-Instanz des `TemperatureSensor` zugreift und Daten verarbeitet.
 * **Ausgangszustand:** System befindet sich im Zustand `AUFHEIZEN`. `TemperatureSensor` liefert simulierten Wert `25.0`.
@@ -45,7 +45,7 @@
 * **Klassen:** `WaffelController`, `TemperatureSensor`, `PIDRegler`
 * **Requirement:** 2.2 (Temperaturmessung), 3.1 (Regelung)
 
-### UT5 – Aktualisierung der GUI durch Controller _(Integrationsebene)_
+### IT5 – Aktualisierung der GUI durch Controller _(Integrationsebene)_
 
 * **Ziel:** Sicherstellen, dass Statusänderungen im `WaffelController` (Logik) korrekt an die `SimpleGUI` (Anzeige) propagiert werden.
 * **Ausgangszustand:** System ist im `STANDBY`. GUI zeigt "STANDBY".
@@ -56,7 +56,7 @@
 * **Klassen:** `WaffelController`, `SimpleGUI`
 * **Requirement:** 1.2 (Anzeige), 4.x (Zustandsanzeige)
 
-### UT6 – Eingabeverarbeitungskette (Button -> Controller -> Solltabelle) _(Integrationsebene)_
+### IT6 – Eingabeverarbeitungskette (Button -> Controller -> Solltabelle) _(Integrationsebene)_
 
 * **Ziel:** Verifikation der kompletten Kette von der Benutzereingabe bis zur Änderung der Zieltemperatur.
 * **Ausgangszustand:** Aktueller Grad ist 3 (entspricht 180°C).
@@ -128,3 +128,15 @@
 * **Erwartete Reaktion:** Die Methode darf als Ergebnis maximal den Wert 100.0 (entspricht 100W) zurückgeben. Eine Begrenzung (Clamping) muss im Code sichergestellt sein.
 * **Komponenten:** `PIDRegler` (Core-Logic).
 * **Requirement:** 3.2
+
+### IT14 – Verfügbarkeit der Sicherheitsabschaltung (Sprint 3)
+* **Ziel:** Verifikation der manuellen Abschaltfunktion und der sofortigen Unterbrechung der Heizleistung (Requirement 5.3).
+* **Vorgehen:** 1. Das System wird in den aktiven Backmodus versetzt (Zustand `AUFHEIZEN`).
+    2. Während der Regelkreis läuft, wird die Methode `stoppeProzess()` manuell ausgelöst (Simulation eines Klicks auf den STOP-Button).
+    3. Es wird geprüft, ob die Heizleistung auf Null sinkt und der Zustand wechselt.
+* **Erwartete Reaktion:** 1. Der `HeaterActuator` muss unmittelbar eine Stellgröße von 0.0 empfangen.
+    2. Der interne Systemzustand muss in `STANDBY` wechseln.
+    3. Die GUI muss den neuen Zustand ("STANDBY") anzeigen.
+    4. Ein Eintrag im `DataLogger` muss den Abbruch dokumentieren.
+* **Komponenten:** `WaffelController`, `SimpleGUI`, `HeaterActuator`, `DataLogger`.
+* **Requirement:** 5.3
