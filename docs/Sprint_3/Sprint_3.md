@@ -29,9 +29,9 @@ Nach Abschluss der Implementierung wurden die Ziele von Sprint 3 mit der tatsäc
 
 | Bereich | Geplantes Design (Soll) | Tatsächliche Implementierung (Ist) | Grund für die Abweichung |
 | :--- | :--- | :--- | :--- |
-| **Datenarchivierung** | Speicherung der Logs در یک پایگاه داده خارجی یا فایل CSV. | Protokollierung über eine **Listen-Struktur im DataLogger** mit Zeitstempeln. | Für die aktuelle Simulationsumgebung ist eine In-Memory-Lösung performanter und ermöglicht eine direktere Validierung der Testfälle. |
+| **Datenarchivierung** | Speicherung der Logs CSV. | Protokollierung über eine **Listen-Struktur im DataLogger** mit Zeitstempeln. | Für die aktuelle Simulationsumgebung ist eine In-Memory-Lösung performanter und ermöglicht eine direktere Validierung der Testfälle. |
 | **Leistungsbegrenzung** | Hardwareseitige Begrenzung durch eine physische Sicherung. | **Softwareseitiges Clamping** (Begrenzung) im `PIDRegler` auf den Wert 1.0 (entspricht 100W). | Eine algorithmische Begrenzung bietet eine schnellere Reaktionszeit und verhindert präventiv das Auslösen physischer Schutzmechanismen. |
-| **Initialisierung** | Statische Verbindung aller Komponenten beim Programmstart (Instanziierung). | **Late-Binding** (Nachträgliche Injektion) des Controllers در کلاس `SimpleGUI`. | Notwendig, um die zirkuläre Abhängigkeit (Circular Dependency) zwischen GUI und Controller-Logik stabil aufzulösen. |
+| **Initialisierung** | Statische Verbindung aller Komponenten beim Programmstart (Instanziierung). | **Late-Binding** (Nachträgliche Injektion) des Controllers in class `SimpleGUI`. | Notwendig, um die zirkuläre Abhängigkeit (Circular Dependency) zwischen GUI und Controller-Logik stabil aufzulösen. |
 
 ---
 

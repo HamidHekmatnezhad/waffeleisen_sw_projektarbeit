@@ -37,15 +37,13 @@ class TemperatureSensor:
         """
         Hilfsmethode
         """
-        self.simulated_temp = max(90.0, neue_temp)
+        self.simulated_temp = neue_temp
 
 
 def get_sensor_instance():
     """
     Gibt die Singleton-Instanz von TemperatureSensor zurück.
     """
-
-    #TODO ich bin nicht sicher diese code Richtig, muss ich testen.
 
     if TemperatureSensor._instance is None:
         TemperatureSensor()

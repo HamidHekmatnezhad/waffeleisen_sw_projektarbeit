@@ -1,0 +1,22 @@
+===========================================
+GEBÜNDELTES TESTPROTOKOLL - WAFFELEISEN
+Datum: 03.01.2026 09:58:57
+Status: Regressionstest-Lauf (Sprint 1-2)
+===========================================
+
+Running UT1.py... BESTANDEN
+Running UT2.py... BESTANDEN
+Running UT3.py... BESTANDEN
+Running IT4.py... BESTANDEN
+Running IT5.py... BESTANDEN
+Running IT6.py... BESTANDEN
+Running UT7.py... BESTANDEN
+Running UT8.py... BESTANDEN
+Running IT11.py... BESTANDEN
+
+===========================================
+ZUSAMMENFASSUNG:
+Gesamtanzahl Tests: 9
+Erfolgreich: 9
+Fehlgeschlagen: 0
+===========================================

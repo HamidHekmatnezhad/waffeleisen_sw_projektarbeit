@@ -1,3 +1,7 @@
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from steuerungsschicht_regelungsschicht.PIDRegler import PIDRegler
 
 def test_ut3_clamping_begrenzung():

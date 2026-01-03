@@ -1,3 +1,7 @@
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from anwendungsschicht.WaffelController import WaffelController
 from Benutzeroberfläche_userinterface.ButtonInput import ButtonInput
 from steuerungsschicht_regelungsschicht.Solltabelle import Solltabelle

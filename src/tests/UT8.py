@@ -1,3 +1,7 @@
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from hardwareAbstraktionsschicht.AkustikSignalgeber import AkustikSignalgeber
 
 def test_ut8_buzzer_signal():
