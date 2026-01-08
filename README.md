@@ -13,3 +13,18 @@ von Hamid Hekmatnezhad
 3. Heizleistungsregelung
 4. Zustandsanzeige
 5. Akustische Rückmeldung
+
+
+# für test alle 3 version
+- sprint 1:
+```bash
+git checkout V0.1.1
+```
+- sprint 2:
+```bash
+git checkout V0.2.0
+```
+- sprint 3:
+```bash
+git checkout V0.3.2
+```
